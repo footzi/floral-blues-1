@@ -1,3 +1,4 @@
-h1 {
-    color: red;
+.b-header {
+    @include suffix(6, 36);
+    @include prefix(6, 36);
 }

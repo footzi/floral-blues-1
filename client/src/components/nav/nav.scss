@@ -1,0 +1,27 @@
+.b-nav {
+    
+}
+
+.b-nav__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.b-nav__list-item {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.b-nav__link {
+    @include transition(color);
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: lighter;
+    color: #424042;
+
+    @media #{$laptop} {
+        &:hover {
+            color: $black;
+        }
+    }
+}
