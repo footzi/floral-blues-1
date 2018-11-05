@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    {% include './head.twig' %}
+    {% block title %}{% endblock %}
+</head>
+<body>
+    <div class="l-layout">
+        <header class="l-layout__header"></header>
+        <main class="l-layout__main">
+            {% block content %}{% endblock %}
+        </main>
+        <footer class="l-layout__footer"></footer>
+    </div>
+    <script async src="www/app.js"></script>
+</body>

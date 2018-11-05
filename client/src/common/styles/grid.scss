@@ -1,0 +1,55 @@
+@import "./breakpoints";
+
+$grid-max-width: auto;
+$grid-columns: 36;
+$grid-columns-width: 38;
+
+@function numberToPx($number) {
+    @return $number * 1px;
+}
+
+@function column($number:1, $of: $grid-columns) {
+    @return percentage($number / $of);
+}
+
+@mixin container($width: $grid-max-width) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    @if $width == auto {
+        max-width: numberToPx($grid-columns * $grid-columns-width);
+    } @else if unit($width) == '%' {
+        max-width: $width;
+    } @else if type-of($width) == 'number' {
+        max-width: numberToPx($width);
+    }
+}
+
+@mixin row() {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin column($number: 1, $of: $grid-columns) {
+    flex-basis: column($number, $of);
+    max-width: column($number, $of);
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+@mixin push($number, $of: $grid-columns) {
+    margin-left: column($number, $of);
+}
+
+@mixin post($number, $of: $grid-columns) {
+    margin-right: column($number, $of);
+}
+
+@mixin prefix($number, $of: $grid-columns) {
+    padding-left: column($number, $of);
+}
+
+@mixin suffix($number, $of: $grid-columns) {
+    padding-right: column($number, $of);
+}
