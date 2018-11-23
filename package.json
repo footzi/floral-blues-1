@@ -10,6 +10,7 @@
     "server": "nodemon -e js,twig ./server/index.js --exec babel-node --presets es2015",
     "eslint": "eslint -c .eslintrc **/*.js",
     "eslint-fix": "eslint -c .eslintrc **/*.js --fix",
+    "browser-sync": "browser-sync start --proxy 'localhost:8080'",
     "stylelint": "stylelint client/src/components/**/*.scss"
   },
   "dependencies": {
