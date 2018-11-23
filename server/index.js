@@ -1,8 +1,8 @@
-import express from 'express';
-import twig from 'twig';
-import path from 'path';
-import config from "./config";
-import clientRoute from "../api/routes/client.js";
+const express = require('express');
+const twig = require('twig');
+const path = require('path');
+const config = require('./config');
+const clientRoute = require('../api/routes/client.js');
 
 const app = express();
 
@@ -12,12 +12,9 @@ app.use(express.static(path.join(__dirname, '/../client')));
 // подключаем шаблонизатор, и нацелеваем на views
 app.set('views', path.join(__dirname + '/../client/src/pages'));
 app.set('view engine', 'twig');
-app.set('twig options', {
-    strict_variables: false
-});
-console.log(path.join(__dirname + '/../client/pages'));
+app.set('twig options', {strict_variables: false});
 
-//Обработка запросов
+// Обработка запросов
 app.use('/', clientRoute);
 
 // Запуск сервера

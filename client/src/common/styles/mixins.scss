@@ -1,0 +1,25 @@
+// стандартный transition
+@mixin transition($property...) {
+    transition-property: $property;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+// Правильное скрытие элементов со страницы
+@mixin visually-hidden() {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+// font-family нужен для работы полифила.
+@mixin object-fit($property: none, $direction: center) {
+    object-fit: $property;
+    object-position: $direction;
+    font-family: 'object-fit: #{$property}; object-position: #{$direction};';
+}

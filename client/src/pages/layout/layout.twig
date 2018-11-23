@@ -6,7 +6,9 @@
 </head>
 <body>
     <div class="l-layout">
-        <header class="l-layout__header"></header>
+        <header class="l-layout__header">
+            {% include "../../components/header/header.twig" %}
+        </header>
         <main class="l-layout__main">
             {% block content %}{% endblock %}
         </main>

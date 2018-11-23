@@ -1,3 +1,1 @@
-export default {
-    PORT: 8080
-}
+module.exports = {PORT: process.env.port || 8080};

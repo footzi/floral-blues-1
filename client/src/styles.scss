@@ -1,4 +1,13 @@
+// Common
 @import './common/styles/reset.scss';
+@import './common/styles/font.scss';
 @import './common/styles/breakpoints.scss';
 @import './common/styles/grid.scss';
+@import './common/styles/app.scss';
+@import './common/styles/mixins.scss';
+@import './common/styles/colors.scss';
+
+// Components
 @import './components/header/header.scss';
+@import './components/nav/nav.scss';
+@import './components/first-screen/first-screen.scss';
