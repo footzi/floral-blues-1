@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run server && npm run client",
+    "start": "node ./server/index.js",
+    "dev": "npm run server && npm run client",
     "client": "webpack --watch --mode=development",
-    "server": "nodemon -e js,twig ./server/index.js --exec babel-node --presets es2015",
+    "server": "nodemon -e js,twig ./server/index.js",
     "eslint": "eslint -c .eslintrc **/*.js",
     "eslint-fix": "eslint -c .eslintrc **/*.js --fix",
     "browser-sync": "browser-sync start --proxy 'localhost:8080'",
