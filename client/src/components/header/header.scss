@@ -1,3 +1,9 @@
-h1 {
-    color: red;
+.b-header {
+    @include suffix(8, 36);
+    @include prefix(8, 36);
+
+    @media #{$fullhd} {
+        @include suffix(10, 36);
+        @include prefix(10, 36);
+    }
 }
